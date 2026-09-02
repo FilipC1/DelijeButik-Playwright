@@ -1,0 +1,29 @@
+name: DelijeButik Playwright Tests
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Preuzimanje projekta
+        uses: actions/checkout@v4
+
+      - name: Instalacija Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalacija dependencies
+        run: npm ci
+
+      - name: Instalacija Playwright browsera
+        run: npx playwright install --with-deps
+
+      - name: Pokretanje testova
+        run: npx playwright test
