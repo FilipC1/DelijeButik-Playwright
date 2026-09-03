@@ -14,7 +14,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://www.delijebutik.com',
 
-    headless: false,
+    headless: true,
 
     screenshot: 'only-on-failure',
 
