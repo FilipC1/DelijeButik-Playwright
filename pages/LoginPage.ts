@@ -18,11 +18,10 @@ export class LoginPage extends BasePage {
     this.lozinka = page.locator('input[name="password"]');
     this.dugmePrijava = page.locator('xpath=//button[@name="login"]');
     this.naslovPrijave = page.locator('xpath=//h2[contains(normalize-space(),"Пријава") or contains(normalize-space(),"Prijava")]').first();
-    this.porukaGreske = page.locator('.woocommerce-error').first();
+    this.porukaGreske = page.locator('//ul[@class="woocommerce-error" and @role="alert"]').first();
     this.zapamtiMeCheckbox = page.locator('input[name="rememberme"]');
     this.linkZaboravljenaLozinka = page.locator('xpath=//a[contains(@href,"lost-password")]').first();
   }
-
 
   async otvoriLoginStranicu() {
     await this.page.goto('/my-account/');
@@ -37,11 +36,9 @@ export class LoginPage extends BasePage {
     await this.lozinka.fill(lozinka);
   }
 
-
   async klikniDugmePrijava() {
     await this.dugmePrijava.click();
   }
-
 
   async prijava(korisnik: string, lozinka: string) {
     await this.korisnickoIme.fill(korisnik);
@@ -62,7 +59,6 @@ export class LoginPage extends BasePage {
   async proveriTekstPorukeGreske(ocekivanaPoruka: string) {
     await expect(this.porukaGreske).toContainText(ocekivanaPoruka);
   }
-
 
   async cekirajZapamtiMe() {
     await this.zapamtiMeCheckbox.check();

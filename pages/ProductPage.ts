@@ -11,10 +11,9 @@ export class ProductPage extends BasePage {
     super(page);
 
     this.naslovProizvoda = page.locator('h1.product_title').first();
-    this.dugmeDodajUKorpu = page.locator('#product-5924 button[name="add-to-cart"]');
+    this.dugmeDodajUKorpu = page.locator('#product-94769 button[name="add-to-cart"]');
     this.brojProizvodaUKorpi = page.locator('xpath=//*[contains(normalize-space(),"1 артикал") or contains(normalize-space(),"1 артикла")]').first();
   }
-
 
   async proveriStranicuProizvoda() {
     await expect(this.naslovProizvoda).toBeVisible();

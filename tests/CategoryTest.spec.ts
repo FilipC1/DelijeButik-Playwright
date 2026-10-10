@@ -1,11 +1,11 @@
 import { test } from './BaseTest';
 
-test('Otvaranje kategorije Magneti', async ({
+test('Otvaranje kategorije Salovi', async ({
   kategorijaStranica
 }) => {
 
   await kategorijaStranica.otvoriStranicuKategorije();
   await kategorijaStranica.proveriStranicuKategorije();
-  await kategorijaStranica.proveriNaslovKategorije('Магнети');
+  await kategorijaStranica.proveriNaslovKategorije('Шалови');
   await kategorijaStranica.proveriDaProizvodPostoji();
 });

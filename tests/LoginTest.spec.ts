@@ -10,6 +10,6 @@ test(
     await loginStranica.proveriLoginStranicu();
     await loginStranica.prijava(PodaciTesta.pogresnoKorisnickoIme,PodaciTesta.pogresnaLozinka);
     await loginStranica.proveriPorukuGreske();
-    await expect(page.locator('.woocommerce-error')).toBeVisible();
+    await expect(page.locator('//ul[@class="woocommerce-error" and @role="alert"]')).toBeVisible();
   }
 );

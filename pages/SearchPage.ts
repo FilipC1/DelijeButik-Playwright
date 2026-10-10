@@ -38,7 +38,6 @@ export class SearchPage extends BasePage {
     await this.prviProizvod.click();
   }
 
-
   async proveriPorukuNemaRezultata() {
     await expect(this.porukaNemaRezultata).toBeVisible();
   }
