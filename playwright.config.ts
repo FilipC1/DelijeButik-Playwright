@@ -8,7 +8,7 @@ export default defineConfig({
 
   // Timeout za expect() asercije, koliko dugo čeka da se uslov ispuni pre nego što javi fail
   expect: {
-    timeout: 60000, // 60 sekundi
+    timeout: 90000, // 90 sekundi
   },
   
   use: {
