@@ -17,7 +17,7 @@ jobs:
       - name: Instalacija Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Instalacija dependencies
         run: npm ci
@@ -26,4 +26,4 @@ jobs:
         run: npx playwright install
 
       - name: Pokretanje testova
-        run: npx playwright test --workers=1
+        run: npx playwright test 
