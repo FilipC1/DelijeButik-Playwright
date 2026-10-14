@@ -12,7 +12,7 @@ export class CheckoutPage extends BasePage {
   }
 
   async proveriCheckoutStranicu() {
-    await expect(this.page).toHaveURL(/checkout/);
+    await expect(this.page).toHaveURL('/checkout/');
     await expect(this.poljeIme).toBeVisible();
   }
 
