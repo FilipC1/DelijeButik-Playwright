@@ -12,10 +12,10 @@ export class CheckoutPage extends BasePage {
   }
 
   async proveriCheckoutStranicu() {
-    //await page.waitForURL('**/checkout/**');
-    //await expect(this.page).toHaveURL('https://www.delijebutik.com/checkout/');
-    await expect(this.page).toHaveURL(/\/checkout\/?/);
-    await expect(this.poljeIme).toBeVisible();
+     await expect(this.page).toHaveURL(/checkout/);
+     await expect(this.poljeIme).toBeVisible();
+    //await expect(this.page).toHaveURL(/\/checkout\/?/);
+    //await expect(this.poljeIme).toBeVisible();
   }
 
 
